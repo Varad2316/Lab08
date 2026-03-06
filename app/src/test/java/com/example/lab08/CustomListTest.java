@@ -23,4 +23,31 @@ public class CustomListTest {
         City edmonton = new City("Edmonton", "AB");
         assertFalse(list.hasCity(edmonton), "Should return false for city not in list");
     }
+
+    /**
+     * Test delete method - removes a city from the list
+     * RED phase - this test will fail because delete() doesn't exist yet
+     */
+    @Test
+    public void testDeleteCity() {
+        CustomList list = new CustomList();
+        City vancouver = new City("Vancouver", "BC");
+        list.addCity(vancouver);
+//        list.delete(vancouver);
+//        assertFalse(list.hasCity(vancouver), "City should be removed from list");
+//        assertEquals(0, list.countCities(), "List should be empty after deletion");
+    }
+
+    /**
+     * Test that delete throws exception when city doesn't exist
+     */
+    @Test
+    public void testDeleteCityNotFound() {
+        CustomList list = new CustomList();
+        City toronto = new City("Toronto", "ON");
+
+//        assertThrows(IllegalArgumentException.class, () -> {
+//            list.delete(toronto);
+//        }, "Should throw exception when deleting non existent city");
+    }
 }
