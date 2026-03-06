@@ -18,9 +18,9 @@ public class CustomListTest {
         City calgary = new City("Calgary", "AB");
 
         list.addCity(calgary);
-        //assertTrue(list.hasCity(calgary), "Should return true for city in list");
+        assertTrue(list.hasCity(calgary), "Should return true for city in list");
 
         City edmonton = new City("Edmonton", "AB");
-        //assertFalse(list.hasCity(edmonton), "Should return false for city not in list");
+        assertFalse(list.hasCity(edmonton), "Should return false for city not in list");
     }
 }
