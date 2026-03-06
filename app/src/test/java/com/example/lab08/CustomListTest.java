@@ -33,9 +33,9 @@ public class CustomListTest {
         CustomList list = new CustomList();
         City vancouver = new City("Vancouver", "BC");
         list.addCity(vancouver);
-//        list.delete(vancouver);
-//        assertFalse(list.hasCity(vancouver), "City should be removed from list");
-//        assertEquals(0, list.countCities(), "List should be empty after deletion");
+        assertTrue(list.hasCity(vancouver), "City should be in list before deletion");
+        list.delete(vancouver);
+        assertFalse(list.hasCity(vancouver), "City should be removed from list");
     }
 
     /**
@@ -46,8 +46,8 @@ public class CustomListTest {
         CustomList list = new CustomList();
         City toronto = new City("Toronto", "ON");
 
-//        assertThrows(IllegalArgumentException.class, () -> {
-//            list.delete(toronto);
-//        }, "Should throw exception when deleting non existent city");
+        assertThrows(IllegalArgumentException.class, () -> {
+            list.delete(toronto);
+        }, "Should throw exception when deleting non existent city");
     }
 }
