@@ -10,7 +10,6 @@ public class CustomListTest {
 
     /**
      * Test hasCity method which checks if a city exists in the list
-     * RED phase- this test will fail because hasCity() doesn't exist yet
      */
     @Test
     public void testHasCity() {
@@ -25,8 +24,7 @@ public class CustomListTest {
     }
 
     /**
-     * Test delete method - removes a city from the list
-     * RED phase - this test will fail because delete() doesn't exist yet
+     * Test delete method which removes a city from the list
      */
     @Test
     public void testDeleteCity() {
@@ -49,5 +47,26 @@ public class CustomListTest {
         assertThrows(IllegalArgumentException.class, () -> {
             list.delete(toronto);
         }, "Should throw exception when deleting non existent city");
+    }
+
+    /**
+     * Test countCities method - returns number of cities in list
+     */
+    @Test
+    public void testCountCities() {
+        CustomList list = new CustomList();
+
+        assertEquals(0, list.countCities(), "Empty list should have 0 cities");
+
+        list.addCity(new City("Montreal", "QC"));
+        assertEquals(1, list.countCities(), "Should have 1 city");
+
+        list.addCity(new City("Ottawa", "ON"));
+        assertEquals(2, list.countCities(), "Should have 2 cities");
+
+        list.addCity(new City("Winnipeg", "MB"));
+        assertEquals(3, list.countCities(), "Should have 3 cities");
+        list.delete(new City("Ottawa", "ON"));
+        assertEquals(2, list.countCities(), "Should have 2 cities after deletion");
     }
 }

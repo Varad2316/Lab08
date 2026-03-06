@@ -33,4 +33,12 @@ public class CustomList {
         }
         cities.remove(city);
     }
+
+    /**
+     * Returns the number of cities in the list
+     * @return The count of cities
+     */
+    public int countCities() {
+        return cities.size();
+    }
 }
