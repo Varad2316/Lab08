@@ -2,7 +2,7 @@ package com.example.lab08;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//test
 public class CustomList {
     private List<City> cities;
 
